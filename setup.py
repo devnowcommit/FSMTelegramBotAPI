@@ -1,6 +1,10 @@
 # -*- coding: utf-8; -*-
 from distutils.core import setup
 
+def readme():
+    with open('README.md') as r:
+        return r.read()
+
 setup(
         name='FSMTelegramBotAPI',
         version='0.0.1',
@@ -10,6 +14,7 @@ setup(
         author="Arslan 'Ars2014' Sakhapov",
         author_email='ars2014@etlgr.com',
         description='Final-state machine wrapper for pyTelegramBotAPI',
+        long_description=readme(),
         keywords='telegram bot api tools wrapper',
         install_requires=['pyTelegramBotAPI'],
         classifiers=[
