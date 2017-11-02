@@ -1,7 +1,7 @@
 # FSMTelegramBotAPI
 A final-state machine wrapper for [pyTelegramBotAPI](https://github.com/eternnoir/pyTelegramBotAPI)
 
-[![Travis](https://img.shields.io/travis/rust-lang/rust.svg?style=flat-square)](https://travis-ci.org/Ars2014/FSMTelegramBotAPI.svg?branch=master) [![PyPI](https://img.shields.io/pypi/v/nine.svg?style=flat-square)](https://pypi.python.org/pypi/FSMTelegramBotAPI)
+[![Travis](https://img.shields.io/travis/Ars2014/FSMTelegramBotAPI.svg?style=flat-square)](https://travis-ci.org/Ars2014/FSMTelegramBotAPI) [![PyPI](https://img.shields.io/pypi/v/FSMTelegramBotAPI.svg?style=flat-square)](https://pypi.python.org/pypi/FSMTelegramBotAPI)
 ## Install
 1. From PyPI using `pip`:
     ```
