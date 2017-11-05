@@ -8,7 +8,7 @@ def readme():
 setup(
         name='FSMTelegramBotAPI',
         version='0.0.1',
-        packages=['fsm_telebot'],
+        packages=['fsm_telebot', 'fsm_telebot.storage'],
         url='https://github.com/Ars2014/FSMTelegramBotAPI',
         license='GNU GPLv2',
         author="Arslan 'Ars2014' Sakhapov",
