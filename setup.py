@@ -1,13 +1,14 @@
 # -*- coding: utf-8; -*-
 from distutils.core import setup
 
+
 def readme():
     with open('README.md') as r:
         return r.read()
 
 setup(
         name='FSMTelegramBotAPI',
-        version='0.0.1',
+        version='0.0.2',
         packages=['fsm_telebot'],
         url='https://github.com/Ars2014/FSMTelegramBotAPI',
         license='GNU GPLv2',
