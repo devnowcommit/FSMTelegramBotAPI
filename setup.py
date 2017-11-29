@@ -6,9 +6,10 @@ def readme():
     with open('README.md') as r:
         return r.read()
 
+
 setup(
         name='FSMTelegramBotAPI',
-        version='0.0.1',
+        version='0.0.3',
         packages=['fsm_telebot', 'fsm_telebot.storage'],
         url='https://github.com/Ars2014/FSMTelegramBotAPI',
         license='GNU GPLv2',

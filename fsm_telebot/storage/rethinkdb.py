@@ -16,6 +16,7 @@ class RethinkDBStorage(BaseStorage):
                  host: typing.Optional[typing.AnyStr] = 'localhost',
                  port: typing.Optional[int] = 28015,
                  db: typing.Optional[typing.AnyStr] = 'FSMBot',
+                 table: typing.Optional[typing.AnyStr] = 'states',
                  user: typing.Optional[typing.AnyStr] = 'FSMBot',
                  password: typing.Optional[typing.AnyStr] = 'FSMBot',
                  timeout: typing.Union[int, float] = 20,
@@ -24,6 +25,7 @@ class RethinkDBStorage(BaseStorage):
         self._host = host
         self._port = port
         self._db = db
+        self._table = table
         self._user = user
         self._port = port
         self._password = password
@@ -31,14 +33,29 @@ class RethinkDBStorage(BaseStorage):
         self._ssl = ssl if ssl else {}
         self._kwargs = kwargs
         self._connection = self._connect()
+        self._initialize()
         atexit.register(self.close)
+
+    def _initialize(self):
+        """
+        Initialize DB and table
+        :return:
+        """
+
+        if self._db not in r.db_list().run(self._connection):
+            r.db_create(self._db).run(self._connection)
+
+        self._connection.use(self._db)
+
+        if self._table not in r.table_list().run(self._connection):
+            r.table_create(self._table)
 
     def _connect(self):
         """
         Connect to RethinkDB
         :return: RethinkDB connection
         """
-        return r.connect(host=self._host, port=self._port, db=self._db,
+        return r.connect(host=self._host, port=self._port,
                          user=self._user, password=self._password,
                          timeout=self._timeout, ssl=self._ssl, **self._kwargs)
 
